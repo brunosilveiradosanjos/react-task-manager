@@ -22,6 +22,44 @@ pnpm install
 pnpm run dev
 ```
 
+## Styling with Tailwind CSS
+
+Tailwind CSS was added to this project to enable a utility-first approach to styling components, following the official setup for Vite.
+
+The commands used for installation:
+
+```bash
+pnpm add tailwindcss @tailwindcss/vite
+npx tailwindcss init -p
+```
+
+### Configuration Steps
+
+`vite.config.ts` If using the Tailwind plugin for Vite:
+
+```typescript
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tailwindcss from "@tailwindcss/vite";
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+});
+```
+
+`src/index.css` Replace the contents of this file with the Tailwind base imports:
+
+```typescript
+@import 'tailwindcss'
+```
+
 ## Important Links
 
-https://vite.dev/
+[Vite Documentation](https://vite.dev/)
+
+[Tailwind CSS Documentation](https://tailwindcss.com/docs/installation/using-vite)
+
+## Author
+
+- [@brunosilveiradosanjos](https://github.com/brunosilveiradosanjos)
