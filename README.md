@@ -38,14 +38,14 @@ npx tailwindcss init -p
 `vite.config.ts` If using the Tailwind plugin for Vite:
 
 ```typescript
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-});
+})
 ```
 
 `src/index.css` Replace the contents of this file with the Tailwind base imports:
@@ -54,11 +54,56 @@ export default defineConfig({
 @import 'tailwindcss'
 ```
 
+## Class Variance Authority (CVA)
+
+[Class Variance Authority (CVA)](https://cva.style/docs) is a utility for building reusable and type-safe component className logic in Tailwind CSS. It helps manage variants and modifiers (like `size`, `variant`, `intent`) in a clean and scalable way.
+
+CVA simplifies managing complex combinations of Tailwind classes without writing conditionals manually, promoting DRY and maintainable code.
+
+### Installation
+
+To add CVA to your project, run:
+
+```bash
+pnpm add class-variance-authority
+```
+
+### Example Usage
+
+```ts
+import { cva } from 'class-variance-authority'
+
+export const button = cva('font-medium rounded', {
+  variants: {
+    intent: {
+      primary: 'bg-blue-500 text-white',
+      secondary: 'bg-gray-100 text-black',
+    },
+    size: {
+      small: 'text-sm px-2 py-1',
+      large: 'text-lg px-4 py-2',
+    },
+  },
+  defaultVariants: {
+    intent: 'primary',
+    size: 'small',
+  },
+})
+```
+
+```tsx
+<button className={button({ intent: 'secondary', size: 'large' })}>
+  Click Me
+</button>
+```
+
 ## Important Links
 
 [Vite Documentation](https://vite.dev/)
 
 [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation/using-vite)
+
+[Class Variance Authority Documentation](https://cva.style/docs)
 
 ## Author
 
