@@ -37,7 +37,7 @@ npx tailwindcss init -p
 
 `vite.config.ts` If using the Tailwind plugin for Vite:
 
-```typescript
+```ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
@@ -48,10 +48,10 @@ export default defineConfig({
 })
 ```
 
-`src/index.css` Replace the contents of this file with the Tailwind base imports:
+`src/index.css` should include:
 
-```typescript
-@import 'tailwindcss'
+```css
+@import 'tailwindcss';
 ```
 
 ## Class Variance Authority (CVA)
@@ -97,6 +97,43 @@ export const button = cva('font-medium rounded', {
 </button>
 ```
 
+## SVG Icons with Reusable Icon Component
+
+The project now supports SVG icons as React components using the [`vite-plugin-svgr`](https://www.npmjs.com/package/vite-plugin-svgr) plugin. A reusable `Icon` component was created to simplify usage and enable Tailwind variants such as animation.
+
+### Installation
+
+```bash
+pnpm add vite-plugin-svgr -D
+```
+
+### Configuration
+
+In `vite.config.ts`:
+
+```ts
+import svgr from 'vite-plugin-svgr'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss(), svgr()],
+})
+```
+
+In `vite-env.d.ts`:
+
+```ts
+/// <reference types="vite-plugin-svgr/client" />
+```
+
+### Example Usage
+
+```
+import TrashIcon from './assets/icons/trash.svg?react'
+import Icon from './components/icon'
+
+<Icon svg={TrashIcon} />
+```
+
 ## Important Links
 
 [Vite Documentation](https://vite.dev/)
@@ -104,6 +141,8 @@ export const button = cva('font-medium rounded', {
 [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation/using-vite)
 
 [Class Variance Authority Documentation](https://cva.style/docs)
+
+[Vite Plugin SVGR Documentation](https://www.npmjs.com/package/vite-plugin-svgr)
 
 ## Author
 
