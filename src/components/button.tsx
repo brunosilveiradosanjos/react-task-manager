@@ -5,7 +5,7 @@ import Text from './text'
 // Define base button styles and variants with class-variance-authority
 // Variants allow you to change styles dynamically based on props
 export const buttonVariants = cva(
-  `flex items-center justify-center cursor-pointer transition rounded-lg group gap-2`,
+  `flex items-center justify-center cursor-pointer transition rounded-lg group gap-2 duration-500`,
   {
     variants: {
       variant: {
