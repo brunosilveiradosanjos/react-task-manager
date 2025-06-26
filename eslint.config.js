@@ -19,7 +19,7 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      quotes: ['error', 'single'],
+      quotes: ['error', 'single', { avoidEscape: false, allowTemplateLiterals: true }],
       semi: ['error', 'never'],
     },
   }

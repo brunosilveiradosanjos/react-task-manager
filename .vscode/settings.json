@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "editor.rulers": [180],
+  "editor.rulers": [100],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[typescriptreact]": {
@@ -17,9 +17,12 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
-  "prettier.useEditorConfig": false,
-  "prettier.configPath": ""
+  }
+  // "prettier.semi": false,
+  // "prettier.singleQuote": true,
+  // "prettier.useEditorConfig": false,
+  // "prettier.configPath": ""
+  // "workbench.colorCustomizations": {
+  //   "editor.foreground": "#ff4081"
+  // }
 }
