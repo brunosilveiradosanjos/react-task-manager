@@ -1,9 +1,12 @@
+import TasksSummary from '@/components/core/tasks-summary'
 import Container from '@/components/small/container'
 
 export default function PageHome() {
   return (
-    <Container as="header" className="mt-3 md:mt-20">
-      Home Page
+    <Container as="article" className="space-y-3">
+      <header className="flex items-center justify-between">
+        <TasksSummary />
+      </header>
     </Container>
   )
 }
