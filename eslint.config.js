@@ -22,5 +22,11 @@ export default tseslint.config(
       quotes: ['error', 'single', { avoidEscape: false, allowTemplateLiterals: true }],
       semi: ['error', 'never'],
     },
+    compilerOptions: {
+      baseurl: './',
+      paths: {
+        '@/*': ['./src/*'],
+      },
+    },
   }
 )
